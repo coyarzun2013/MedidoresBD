@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MedidorDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Lectura">
+    <Key>
+      <PropertyRef Name="IdLectura" />
+    </Key>
+    <Property Name="IdLectura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Hora" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Fecha" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Consumo" Type="int" Nullable="false" />
+    <Property Name="IdMedidor" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Medidor">
+    <Key>
+      <PropertyRef Name="IdMedidor" />
+    </Key>
+    <Property Name="IdMedidor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Numero" Type="int" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="IdTipo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoMedidor">
+    <Key>
+      <PropertyRef Name="IdTipo" />
+    </Key>
+    <Property Name="IdTipo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Rut" Type="varchar" MaxLength="13" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Contrasena" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Correo" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Medidor_Lectura">
+    <End Role="Medidor" Type="Self.Medidor" Multiplicity="1" />
+    <End Role="Lectura" Type="Self.Lectura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Medidor">
+        <PropertyRef Name="IdMedidor" />
+      </Principal>
+      <Dependent Role="Lectura">
+        <PropertyRef Name="IdMedidor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tipo_Medidor">
+    <End Role="TipoMedidor" Type="Self.TipoMedidor" Multiplicity="1" />
+    <End Role="Medidor" Type="Self.Medidor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoMedidor">
+        <PropertyRef Name="IdTipo" />
+      </Principal>
+      <Dependent Role="Medidor">
+        <PropertyRef Name="IdTipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Medidor">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Medidor" Type="Self.Medidor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Medidor">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MedidorDBModelStoreContainer">
+    <EntitySet Name="Lectura" EntityType="Self.Lectura" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Medidor" EntityType="Self.Medidor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoMedidor" EntityType="Self.TipoMedidor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Medidor_Lectura" Association="Self.FK_Medidor_Lectura">
+      <End Role="Medidor" EntitySet="Medidor" />
+      <End Role="Lectura" EntitySet="Lectura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tipo_Medidor" Association="Self.FK_Tipo_Medidor">
+      <End Role="TipoMedidor" EntitySet="TipoMedidor" />
+      <End Role="Medidor" EntitySet="Medidor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Medidor" Association="Self.FK_Usuario_Medidor">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Medidor" EntitySet="Medidor" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

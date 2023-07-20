@@ -1,0 +1,12 @@
+C:\Users\pollox\source\repos\MedidoresDB\MedidoresDB\bin\Debug\MedidoresDB.dll.config
+C:\Users\pollox\source\repos\MedidoresDB\MedidoresDB\bin\Debug\MedidoresDB.dll
+C:\Users\pollox\source\repos\MedidoresDB\MedidoresDB\bin\Debug\MedidoresDB.pdb
+C:\Users\pollox\source\repos\MedidoresDB\MedidoresDB\bin\Debug\EntityFramework.dll
+C:\Users\pollox\source\repos\MedidoresDB\MedidoresDB\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\pollox\source\repos\MedidoresDB\MedidoresDB\bin\Debug\EntityFramework.xml
+C:\Users\pollox\source\repos\MedidoresDB\MedidoresDB\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\pollox\source\repos\MedidoresDB\MedidoresDB\obj\Debug\MedidoresDB.csproj.AssemblyReference.cache
+C:\Users\pollox\source\repos\MedidoresDB\MedidoresDB\obj\Debug\MedidoresDB.csproj.CoreCompileInputs.cache
+C:\Users\pollox\source\repos\MedidoresDB\MedidoresDB\obj\Debug\MedidoresDB.csproj.CopyComplete
+C:\Users\pollox\source\repos\MedidoresDB\MedidoresDB\obj\Debug\MedidoresDB.dll
+C:\Users\pollox\source\repos\MedidoresDB\MedidoresDB\obj\Debug\MedidoresDB.pdb

@@ -9,7 +9,7 @@
         <div class="col-md-8 mx-auto">
             <div class="card">
                 <div class="mensaje">
-                    <asp:Label runat="server" ID="mensajesLbl" CssClass="text-success"></asp:Label>
+                    <asp:Label runat="server" ID="mensajesLbl" CssClass="text-danger"></asp:Label>
                 </div>
                 <div class="card-header" >
                     <h3>Crear Usuario</h3>
